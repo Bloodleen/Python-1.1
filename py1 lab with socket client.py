@@ -1,0 +1,11 @@
+import socket
+conn = socket.socket()
+addr = input('Введите адрес сервера ')
+conn.connect((addr,6767))
+print(conn.recv(1024).decode())
+a=input()
+conn.send(a.encode())
+print(conn.recv(1024).decode())
+b=input()
+conn.send(b.encode())
+print(conn.recv(1024).decode())
